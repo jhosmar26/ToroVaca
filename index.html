@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section class="main-layout">
+    <section id="bar" class="numpad">
+      <span id="js-main-number" class="numpad-main-number">????</span>
+      <section class="numpad-numbers">
+        <button id="js-button-1">1</button>
+        <button id="">2</button>
+        <button id="">3</button>
+        <button id="">4</button>
+        <button id="">5</button>
+        <button id="">6</button>
+        <button id="">7</button>
+        <button id="">8</button>
+        <button id="">9</button>
+        <button id="">0</button>
+      </section>
+      <section class="numpad-actions">
+        <button id="js-clear">Limpiar</button>
+        <button>Enviar</button>
+      </section>
+    </section>
+  </section>
+  <script>
+    const button1 = document.getElementById("js-button-1")
+    const mainNumber = document.getElementById("js-main-number")
+    const clear = document.getElementById("js-clear")
+
+    function updateMainNumber() {
+      mainNumber.innerText = "1"
+    }
+
+    function ClearMainNumber() {
+      mainNumber.innerText = "????"
+    }
+
+    button1.addEventListener("click", updateMainNumber)
+    clear.addEventListener("click", ClearMainNumber)
+
+  </script>
+</body>
+</html>
