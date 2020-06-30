@@ -1,0 +1,28 @@
+ul{
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.record{
+    display: flex;
+    justify-content: center;
+}
+
+.record-grid{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 30px;
+}
+
+.record-grid-num{
+    font-size: 24px;
+    letter-spacing: 20px;
+}
+
+.record-grid-v, .record-grid-t{
+    font-size: 20px;
+}
