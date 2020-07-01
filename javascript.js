@@ -4,9 +4,11 @@ const $number1 = document.querySelector("#mainNumber-1");
 const $number2 = document.querySelector("#mainNumber-2");
 const $number3 = document.querySelector("#mainNumber-3");
 const $number4 = document.querySelector("#mainNumber-4");
+const $reset = document.querySelector("#js-reset");
 
 // Functions
 const isAvailable = (valueNumber) => {
+
   if ($number1.innerText === "?") {
     $number1.innerText = valueNumber;
     return;
@@ -30,7 +32,13 @@ const updateMainNumber = (event) => {
   isAvailable(valueNumber);
 };
 
+const updateColor = (event) => {
+  const button = event.target
+  button.classList.add("selected");
+};
+
 // Handle Events
 for (let index = 0; index < $buttonNumbers.length; index++) {
   $buttonNumbers[index].addEventListener("click", updateMainNumber);
+  $buttonNumbers[index].addEventListener("click", updateColor);
 }
