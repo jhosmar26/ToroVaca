@@ -1,3 +1,10 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 ul{
     padding: 0;
 }
@@ -25,4 +32,26 @@ ul li{
 
 .record-grid-v, .record-grid-t{
     font-size: 20px;
+}
+/* -------------------------------------- */
+.numPad{
+    max-width: 470px;
+    width: 100%;
+}
+
+.numPad-mainNumber{
+    display: flex;
+    justify-content: center;
+    letter-spacing: 15px;
+    font-size: 30px;
+}
+
+.numPad-selection{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.numPad-buttons{
+    display: flex;
+    justify-content: space-between;
 }
