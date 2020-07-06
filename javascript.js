@@ -11,25 +11,12 @@ const $record = document.querySelector("#js-record")
 
 // Functions
 const isAvailable = (valueNumber) => {
-  for(let index = 1 ; index < 5 ; index++ ){
-  
-  }
-  if ($number1.innerText === "?") {
-    $number1.innerText = valueNumber;
-    return;
-  }
-  if ($number2.innerText === "?") {
-    $number2.innerText = valueNumber;
-    return;
-  }
-  if ($number3.innerText === "?") {
-    $number3.innerText = valueNumber;
-    return;
-  }
-  if ($number4.innerText === "?") {
-    $number4.innerText = valueNumber;
-    return;
-  }
+  for(let index = 0 ; index < $mainNumbers.length ; index++ ){
+    if($mainNumbers[index].innerText == "?"){
+      $mainNumbers[index].innerText = valueNumber;
+      return
+    };
+  };
 };
 
 const updateMainNumber = (event) => {
@@ -38,7 +25,7 @@ const updateMainNumber = (event) => {
 };
 
 const notAvailable = (event) => {
-  const button = event.target
+  const button = event.target;
   button.classList.add("selected");
 };
 
