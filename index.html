@@ -9,10 +9,10 @@
   </head>
   <body>
     <section class="record">
-      <ul class="record-grid">
+      <ul id="js-record" class="record-grid">
         <li class="record-grid-num">1234</li>
-        <li class="record-grid-v">V</li>
         <li class="record-grid-t">T</li>
+        <li class="record-grid-v">V</li>
       </ul>
     </section>
     <section class="numPad">
@@ -36,8 +36,17 @@
       </div>
       <div class="numPad-buttons">
         <button id="js-reset">R</button>
-        <input type="submit" />
+        <input id="js-submit" type="submit" />
       </div>
+    </section>
+    <section class="answer">
+      <span>ANSWER</span>
+      <ul>
+        <li>4</li>
+        <li>0</li>
+        <li>6</li>
+        <li>1</li>
+      </ul>
     </section>
     <script src="javascript.js"></script>
   </body>

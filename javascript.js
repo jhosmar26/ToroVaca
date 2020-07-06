@@ -5,10 +5,15 @@ const $number2 = document.querySelector("#mainNumber-2");
 const $number3 = document.querySelector("#mainNumber-3");
 const $number4 = document.querySelector("#mainNumber-4");
 const $reset = document.querySelector("#js-reset");
-const $numbers = document.querySelectorAll(".js-main-number")
+const $mainNumbers = document.querySelectorAll(".js-main-number")
+const $submit = document.querySelector("#js-submit")
+const $record = document.querySelector("#js-record")
 
 // Functions
 const isAvailable = (valueNumber) => {
+  for(let index = 1 ; index < 5 ; index++ ){
+  
+  }
   if ($number1.innerText === "?") {
     $number1.innerText = valueNumber;
     return;
@@ -38,13 +43,26 @@ const notAvailable = (event) => {
 };
 
 const resetNumbers = () => {
-  for (let index=0; index < 4; index++){
-    const numberToChange = document.querySelectorAll(`.js-main-number`);
-    numberToChange[index].innerText = "?";
+  for (let index = 0 ; index < $mainNumbers.length ; index++){
+    const $numberToChange = document.querySelectorAll(`.js-main-number`);
+    $numberToChange[index].innerText = "?";
   }
   for (let index = 0; index < $buttonNumbers.length; index++){
     $buttonNumbers[index].classList.remove("selected");
   }
+}
+
+const submitResult = () => {
+  let $testNumber = "";
+  for (let index = 0 ; index < $mainNumbers.length ; index++){
+    if ($mainNumbers[index].innerText == "?"){
+      return alert("error");
+    }
+    $testNumber = $testNumber+$mainNumbers[index].innerText;
+  }
+  resetNumbers();
+  $record.innerHTML += `<li>${$testNumber}</li><li>T</li><li>V</li>`;
+
 }
 
 // Handle Events
@@ -54,3 +72,5 @@ for (let index = 0; index < $buttonNumbers.length; index++) {
 }
 
 $reset.addEventListener("click", resetNumbers);
+
+$submit.addEventListener("click", submitResult);
