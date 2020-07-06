@@ -14,9 +14,16 @@ const isAvailable = (valueNumber) => {
   for(let index = 0 ; index < $mainNumbers.length ; index++ ){
     if($mainNumbers[index].innerText == "?"){
       $mainNumbers[index].innerText = valueNumber;
-      return
+      console.log(index)
+      if(index!=3){
+        return
+      }
     };
   };
+  for (index = 0; index < $buttonNumbers.length ; index++){
+    $buttonNumbers[index].classList.add("selected");
+
+  }
 };
 
 const updateMainNumber = (event) => {
