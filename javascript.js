@@ -4,6 +4,7 @@ const $reset = document.querySelector("#js-reset");
 const $mainNumbers = document.querySelectorAll(".js-main-number");
 const $submit = document.querySelector("#js-submit");
 const $record = document.querySelector("#js-record");
+const $answer = document.querySelector("#js-answer").innerText;
 
 // Functions
 const isAvailable = (valueNumber) => {
@@ -39,9 +40,33 @@ const resetButtons = () => {
   }
 };
 
+const comparationCoincidences = (first, second) => {
+  let coincidences = 0;
+  let toros = 0;
+  for (indexFirst = 0; indexFirst < first.length; indexFirst++) {
+    for (indexSecond = 0; indexSecond < second.length; indexSecond++) {
+      if (first[indexFirst] == second[indexSecond]) {
+        coincidences++;
+        if (indexFirst == indexSecond) {
+          toros++;
+        }
+      }
+    }
+  }
+  vacas = coincidences - toros;
+  return [toros, vacas];
+};
+
+const endGame = (toros) => {
+  if (toros == 4) {
+    alert("YOU WONNNNNN");
+  }
+};
+
 const getTorosYVacas = (number) => {
-  console.log(number);
-  return `<li>T</li><li>V</li>`;
+  const torosVacas = comparationCoincidences(number, $answer);
+  endGame(torosVacas[0]);
+  return `<li>${torosVacas[0]}T</li><li>${torosVacas[1]}V</li>`;
 };
 
 const submitResult = () => {
